@@ -1,0 +1,12 @@
+C:\BOM-15-10-2016\BOM\BOM\bin\WebApplication3.dll.config
+C:\BOM-15-10-2016\BOM\BOM\bin\WebApplication3.dll
+C:\BOM-15-10-2016\BOM\BOM\bin\WebApplication3.pdb
+C:\BOM-15-10-2016\BOM\BOM\obj\Release\BOM.csprojResolveAssemblyReference.cache
+C:\BOM-15-10-2016\BOM\BOM\obj\Release\WebApplication3.dll
+C:\BOM-15-10-2016\BOM\BOM\obj\Release\WebApplication3.pdb
+C:\BOM-Nov15\BOM\obj\Release\BOM.csprojResolveAssemblyReference.cache
+C:\BOM-Nov15\BOM\bin\BOM.dll.config
+C:\BOM-Nov15\BOM\bin\BOM.dll
+C:\BOM-Nov15\BOM\bin\BOM.pdb
+C:\BOM-Nov15\BOM\obj\Release\BOM.dll
+C:\BOM-Nov15\BOM\obj\Release\BOM.pdb

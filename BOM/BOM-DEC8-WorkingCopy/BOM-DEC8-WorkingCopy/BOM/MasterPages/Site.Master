@@ -1,0 +1,113 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="BOM.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="Scripts/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery.treemenu.js"></script>
+    <script>
+        $(function () {
+            $(".tree").treemenu({ delay: 300 }).openActive();
+        });
+    </script>
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-36251023-1']);
+        _gaq.push(['_setDomainName', 'jqueryscript.net']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+        function selectType(id) {
+            $("#lblSelectedID").text(id);
+            $("#lblSelectedID").val(id);
+            alert($("#lblSelectedID").text());
+             
+                location.reload();
+            
+        }
+    </script>
+    <link rel="stylesheet" href="Styles/jquery.treemenu.css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+     <asp:ScriptManager runat="server" ID="scr"></asp:ScriptManager>
+    <div class="page">
+        <div class="header">
+            <div class="title">
+                <h1>
+                    BOM
+                </h1>
+            </div>
+            <div class="loginDisplay">
+                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                    <AnonymousTemplate>
+                        [ <a href="~/Account/Login.aspx" id="HeadLoginStatus" runat="server">Log In</a>
+                        ]
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        Welcome <span class="bold">
+                            <asp:LoginName ID="HeadLoginName" runat="server" />
+                        </span>! [
+                        <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out"
+                            LogoutPageUrl="~/" />
+                        ]
+                    </LoggedInTemplate>
+                </asp:LoginView>
+            </div>
+            <div class="clear hideSkiplink">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false"
+                    IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Design.aspx" Text="Home" />
+                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="About" />
+                    </Items>
+                </asp:Menu>
+            </div>
+        </div>
+        <div class="main">
+            <table width="100%" style="min-height:420px" cellpadding="0" cellspacing="0">
+                <tr style="min-height:420px" >
+                    <td style="width: 20%" valign="top" align="left">
+                        <ul class="tree">
+                            <li><a href="Design.aspx?id=1">DESIGN DEPT </a></li>
+                            <li><a href="PeDept.aspx?id=2">PE DEPT</a></li>
+                            <li><a href="PcDept.aspx?id=3">PC DEPT</a></li>
+                            <li><a href="BPCosting.aspx?id=4">BP COSTING DEPT</a></li>
+                            <li><a href="PurchaseDept.aspx?id=5">PURCHASE DEPT</a></li>
+                            <li><a href="ReportExport.aspx?id=5">REPORTS</a></li>
+                        </ul>
+                    </td>
+                    <td style="border-left: 1px solid red; padding: 5px;"></td>
+                    <td>
+                        <asp:UpdatePanel runat="server" ID="up">
+                            <ContentTemplate>
+                                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <asp:Label runat="server" ID="lblSelectedID" style="display:none"></asp:Label>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+    </div>
+    </form>
+</body>
+</html>
